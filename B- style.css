@@ -1,0 +1,79 @@
+/* BlueBay static landing – simple, clean, responsive */
+:root{
+  --primary:#2563eb;
+  --bg:#f8fafc;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --ring:rgba(37,99,235,.15);
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:linear-gradient(#eef6ff,#fff)}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+/* navbar */
+.nav{position:sticky;top:0;background:rgba(255,255,255,.75);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0;z-index:50}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700}
+.logo{background:var(--primary);color:#fff;padding:6px 10px;border-radius:12px}
+.sub{color:var(--muted)}
+.menu{display:none;gap:18px}
+.menu a{color:#1f2937;text-decoration:none;font-size:14px}
+.menu a:hover{color:var(--primary)}
+@media(min-width:860px){.menu{display:flex}}
+.btn{display:inline-block;background:#0f172a;color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;border:1px solid #0f172a;transition:.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px var(--ring)}
+.btn--primary{background:var(--primary);border-color:var(--primary)}
+.btn--light{background:#fff;color:#0f172a;border-color:#e2e8f0}
+
+/* hero */
+.hero{position:relative;min-height:72vh;display:flex;align-items:center;color:#fff}
+.hero__bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1800&auto=format&fit=crop');background-size:cover;background-position:center;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.15) 40%, rgba(0,0,0,0));z-index:-1}
+.hero__content{padding:72px 0}
+.hero h1{font-size:clamp(28px,4vw,48px);margin:0 0 10px}
+.hero p{max-width:740px;font-size:clamp(15px,1.6vw,18px);opacity:.95}
+.hero__cta{display:flex;gap:10px;margin:16px 0 8px}
+.amenities{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;max-width:680px;margin-top:16px}
+.amenities span{background:rgba(255,255,255,.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);padding:8px 10px;border-radius:12px;font-size:13px}
+@media(min-width:720px){.amenities{grid-template-columns:repeat(4,1fr)}}
+
+/* sections */
+.section{padding:56px 0}
+.section--alt{background:#f1f5f9}
+.lead{color:var(--muted)}
+
+/* cards */
+.cards{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 14px rgba(2,6,23,.06)}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card__body{padding:14px}
+.card__body h3{margin:0 0 6px}
+.card--promo .card__badge{position:absolute;margin:12px;background:#111827;color:#fff;padding:6px 10px;border-radius:12px;font-size:12px}
+.card--promo{position:relative}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+
+/* feature grid */
+.grid--features{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
+.feature{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px}
+.feature h4{margin:0 0 6px}
+@media(min-width:760px){.grid--features{grid-template-columns:repeat(3,1fr)}}
+
+/* masonry gallery */
+.masonry{columns:1;column-gap:12px}
+.masonry img{width:100%;margin:0 0 12px;border-radius:12px;display:block}
+@media(min-width:600px){.masonry{columns:2}}
+@media(min-width:980px){.masonry{columns:3}}
+
+/* map */
+.map-wrap{margin-top:14px;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 6px 16px rgba(2,6,23,.06)}
+.map-wrap iframe{width:100%;height:360px;border:0}
+
+/* footer */
+.footer{background:#0b1220;color:#d1d5db;margin-top:40px}
+.footer__grid{display:grid;grid-template-columns:1fr;gap:20px;padding:28px 0}
+.footer h4{color:#fff;margin:0 0 8px}
+.list{list-style:none;padding:0;margin:0}
+.list a{color:#d1d5db;text-decoration:none}
+.footer__legal{border-top:1px solid rgba(255,255,255,.08);padding:14px 0 24px;color:#9ca3af}
+@media(min-width:760px){.footer__grid{grid-template-columns:2fr 1fr 1fr}}
